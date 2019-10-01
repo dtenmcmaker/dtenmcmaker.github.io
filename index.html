@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″/>
+    <title>欢迎！</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        @font-face {
+            font-family: syht;
+            src: url("/static/font/SiyuanHeiti.otf");
+        }
+
+        @font-face {
+            font-family: syhtl;
+            src: url("/static/font/SiyuanHeitiLight.otf");
+        }
+
+        #hello {
+            position: fixed;
+            top: 200px;
+            left: 0%;
+            width: 100%;
+            text-align: center;
+            font-size: 66px;
+            font-family: syhtl;
+        }
+
+    </style>
+    <script>
+        var hellos = ['欢迎!', 'Welcome!', 'Willkommen!', '¡Bienvenido!', 'Velkommen.', 'ようこそ！', 'ยินดีต้อนรับค่ะ', '어서 오세요.', ' Добро пожаловать! ', ' مرحبا ', 'स्वागत है!'];
+        var length = hellos.length;
+        var i = 0;
+        var show = 1;
+        var opacity = 1;
+        var word = '';
+        var wait = 0;
+
+        $(document).ready(function () {
+            setInterval('loop()', 20);
+        });
+
+        function loop() {
+            console.log('执行');
+            opacity = parseFloat($('#hello').css('opacity'));
+            switch (show) {
+                case 0:
+                    if (opacity > 0) {
+                        opacity -= 0.02;
+                        $('#hello').css('opacity', opacity);
+                    } else {
+                        i++;
+                        if (i === length) i = 0;
+                        word = hellos[i];
+                        $('#hello').html(word);
+                        show = 1;
+                    }
+                    break;
+                case 1:
+                    if (opacity < 1) {
+                        opacity += 0.02;
+                        $('#hello').css('opacity', opacity);
+                    } else {
+                        if (wait > 50) {
+                            show = 0;
+                            wait = 0;
+                        } else {
+                            wait++;
+                        }
+                    }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id='hello' style='opacity:1;'>欢迎！</div>
+</body>
+</html>
