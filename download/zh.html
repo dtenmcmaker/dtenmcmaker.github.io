@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>镇海校区 - 下载 - Minecraft双十制作组</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="../static/icon-t.png">
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" href="../static/main.css">
+    <style>
+        @media only screen and (max-width: 1080px) {
+            .title {
+                font-size: 36px;
+            }
+        }
+
+        @media only screen and (min-width: 1080px) {
+            .title {
+                font-size: 60px;
+                letter-spacing: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul class="layui-nav">
+    <li class="layui-nav-item layui-hide-xs" style="margin: 0 30px;">
+        <img src="../static/icon.png" class="layui-nav-img">Minecraft双十制作组
+    </li>
+    <li class="layui-nav-item">
+        <a href="..">主页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a>下载</a>
+        <dl class="layui-nav-child">
+            <dd><a href="../download/zh">初中部（镇海校区）</a></dd>
+            <dd><a href="../download/fh">高中部（枋湖校区）</a></dd>
+            <dd><a href="../download/resources">资源</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="../install">安装教程</a>
+    </li>
+    <li class="layui-nav-item">
+        <a href="../contact">联系我们</a>
+    </li>
+</ul>
+<div class="board-container">
+    <img class="board-background" src="../static/image/zh-bg1.png">
+    <div class="board-main layui-container">
+        <div class="content white-text center-text" style="margin-top: 60px;">
+            <p style="font-size: 22px;">1 : 1 还 原</p>
+        </div>
+        <div class="header title white-text center-text">福建省厦门双十中学</div>
+        <div class="content white-text center-text">
+            <p style="font-size: 22px;">镇海校区（初中部） Minecraft存档</p>
+        </div>
+        <div class="center-text"><a class="download layui-btn layui-btn-lg layui-btn-disabled">敬请期待</a></div>
+    </div>
+</div>
+<div class="board-container-flex">
+    <div class="board-main layui-container">
+        <div class="header center-text">时间轴</div>
+        <div class="content">
+            <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">2015年8月25日</h3>
+                        <p>
+                            存档发布
+                        </p>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">2015年6月</h3>
+                        <p>
+                            开始制作存档
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="board-container-flex">
+    <div class="board-main layui-container" style="padding: 40px 0;border-top:1px solid #cccccc;">
+        <div class="content center-text">
+            <p style="font-size: 24px;font-weight: 200;">福建省厦门双十中学 镇海校区 Minecraft存档</p>
+            <p>于2015年8月25日发布</p>
+            <p>适用版本：1.8.1及以上</p>
+        </div>
+        <div class="center-text"><a class="download layui-btn layui-btn-lg layui-btn-disabled">敬请期待</a></div>
+    </div>
+</div>
+<footer>
+    <div class="container center-text thin-text">
+        <span style="display:inline-block;margin: 5px;">©2015-2019&nbsp;mc双十制作组</span><span
+            style="display:inline-block;margin: 5px;">制作组所有存档均遵循MIT协议</span>
+    </div>
+    <div class="container center-text thin-text">
+        <a href="http://www.sszx.cn/">链接：福建省厦门双十中学官网</a>
+    </div>
+</footer>
+<script src="../static/jquery.js"></script>
+<script src="../static/layui/layui.js"></script>
+<script src="../static/main.js"></script>
+<script>
+    $(document).ready(function () {
+        getStatus('https://github.com/dtenmcmaker/Shuangshi-Middle-ZH/raw/master', function (data) {
+            if (data === 1) $('.download').attr('class', 'download layui-btn layui-btn-lg layui-btn-normal').attr('href', 'https://github.com/dtenmcmaker/Shuangshi-Middle-ZH/archive/master.zip').html('点此下载')
+        });
+    });
+</script>
+</body>
+</html>

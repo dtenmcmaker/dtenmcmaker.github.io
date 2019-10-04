@@ -19,6 +19,20 @@ var browser = {
     language: (navigator.browserLanguage || navigator.language).toLowerCase()
 };
 
+function getStatus(path, func) {
+    $.ajax({
+        url: path + "/status.json",
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            func(data);
+        },
+        error: function () {
+            console.log('出错。');
+        }
+    });
+}
+
 function flexify(set) {
     $(document).ready(function () {
         set();
@@ -30,8 +44,12 @@ function flexify(set) {
     });
 }
 
+layui.use('element', function () {
+    var element = layui.element;
+});
+
 $(document).ready(function () {
     flexify(function () {
-        $('.board-container').css('height', (0.8 * $(window).height()) + 'px');
+        $('.board-container').css('height', ($(window).width() < 1080 ? 0.85 * $(window).height() : Math.min(0.85 * $(window).height(), 9 / 16 * $(window).width())) + 'px');
     });
 });

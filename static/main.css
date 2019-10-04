@@ -1,8 +1,20 @@
+@font-face {
+    font-family: 'yanti';
+    src: url('../static/fonts/yanti.eot');
+    src: url('../static/fonts/yanti.eot?#iefix') format('embedded-opentype'),
+    url('../static/fonts/yanti.woff') format('woff'),
+    url('../static/fonts/yanti.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-size: 18px;
 }
 
 footer {
+    margin-top: 20px;
+    font-size: 16px;
     padding: 15px 0;
     border-top: 1px solid #cccccc;
 }
@@ -29,7 +41,7 @@ footer {
 }
 
 .content {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .content p {
