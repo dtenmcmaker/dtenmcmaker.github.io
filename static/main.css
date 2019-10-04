@@ -32,11 +32,11 @@ footer {
     position: absolute;
 }
 
-.header,.ultra-thin-text {
+.ultra-thin-text {
     font-weight: 100;
 }
 
-.thin-text{
+.header,.thin-text{
     font-weight: 300;
 }
 

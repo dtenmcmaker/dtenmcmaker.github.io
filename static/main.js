@@ -19,16 +19,19 @@ var browser = {
     language: (navigator.browserLanguage || navigator.language).toLowerCase()
 };
 
-function getStatus(path, func) {
+function getStatus(path, success, fail) {
+    var fail = fail || function () {
+            console.log('出错。');
+        };
     $.ajax({
         url: path + "/status.json",
         type: "get",
         dataType: "json",
         success: function (data) {
-            func(data);
+            success(data);
         },
-        error: function () {
-            console.log('出错。');
+        error: function (err) {
+            fail(err);
         }
     });
 }
