@@ -45,7 +45,7 @@
     </li>
 </ul>
 <div class="board-container">
-    <img class="board-background" src="../static/image/zh-bg1.png">
+    <img class="board-background" src="../static/image/zh-bg1.jpg">
     <div class="board-main layui-container">
         <div class="content white-text center-text" style="margin-top: 60px;">
             <p style="font-size: 22px;">1 : 1 还 原</p>
@@ -108,7 +108,7 @@
 <script src="../static/main.js"></script>
 <script>
     $(document).ready(function () {
-        getStatus('https://github.com/dtenmcmaker/Shuangshi-Middle-ZH/raw/master', function (data) {
+        getStatus('https://raw.githubusercontent.com/dtenmcmaker/Shuangshi-Middle-ZH/master', function (data) {
             if (data === 1) $('.download').attr('class', 'download layui-btn layui-btn-lg layui-btn-normal').attr('href', 'https://github.com/dtenmcmaker/Shuangshi-Middle-ZH/archive/master.zip').html('点此下载')
         });
     });
