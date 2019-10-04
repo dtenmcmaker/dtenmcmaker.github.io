@@ -1,77 +1,94 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <meta name=”viewport” content=”width=device-width, initial-scale=1″/>
-    <title>欢迎！</title>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
-    <style>
-        @font-face {
-            font-family: syht;
-            src: url("/static/font/SiyuanHeiti.otf");
-        }
-
-        @font-face {
-            font-family: syhtl;
-            src: url("/static/font/SiyuanHeitiLight.otf");
-        }
-
-        #hello {
-            position: fixed;
-            top: 200px;
-            left: 0%;
-            width: 100%;
-            text-align: center;
-            font-size: 66px;
-            font-family: syhtl;
-        }
-
-    </style>
-    <script>
-        var hellos = ['欢迎!', 'Welcome!', 'Willkommen!', '¡Bienvenido!', 'Velkommen.', 'ようこそ！', 'ยินดีต้อนรับค่ะ', '어서 오세요.', ' Добро пожаловать! ', ' مرحبا ', 'स्वागत है!'];
-        var length = hellos.length;
-        var i = 0;
-        var show = 1;
-        var opacity = 1;
-        var word = '';
-        var wait = 0;
-
-        $(document).ready(function () {
-            setInterval('loop()', 20);
-        });
-
-        function loop() {
-            console.log('执行');
-            opacity = parseFloat($('#hello').css('opacity'));
-            switch (show) {
-                case 0:
-                    if (opacity > 0) {
-                        opacity -= 0.02;
-                        $('#hello').css('opacity', opacity);
-                    } else {
-                        i++;
-                        if (i === length) i = 0;
-                        word = hellos[i];
-                        $('#hello').html(word);
-                        show = 1;
-                    }
-                    break;
-                case 1:
-                    if (opacity < 1) {
-                        opacity += 0.02;
-                        $('#hello').css('opacity', opacity);
-                    } else {
-                        if (wait > 50) {
-                            show = 0;
-                            wait = 0;
-                        } else {
-                            wait++;
-                        }
-                    }
-            }
-        }
-    </script>
+    <title>测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./static/layui/css/layui.css">
+    <link rel="stylesheet" href="./static/main.css">
+    <style></style>
 </head>
 <body>
-<div id='hello' style='opacity:1;'>欢迎！</div>
+<ul class="layui-nav">
+    <li class="layui-nav-item layui-hide-xs" style="margin: 0 30px;">
+        minecraft双十制作组
+    </li>
+    <li class="layui-nav-item">
+        <a href="">主页</a>
+    </li>
+    <li class="layui-nav-item">
+        <a>下载</a>
+        <dl class="layui-nav-child">
+            <dd><a href="">初中部（镇海校区）</a></dd>
+            <dd><a href="">高中部（枋湖校区）</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item">
+        <a href="">联系我们</a>
+    </li>
+</ul>
+<div class="board-container">
+    <img class="board-background" src="./static/image/home-bg1.png">
+    <div class="board-main layui-container">
+        <div class="header white-text">这个是标题</div>
+        <div class="content white-text">
+            <p>这个是内容</p>
+        </div>
+    </div>
+</div>
+<div class="board-container-flex">
+    <div class="board-main layui-container">
+        <div class="header center-text">这个是标题</div>
+        <div class="content">
+            <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">日期</h3>
+                        <p>
+                            内容
+                        </p>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">日期</h3>
+                        <p>
+                            内容
+                        </p>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">日期</h3>
+                        <p>
+                            内容
+                        </p>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <div class="layui-timeline-title">过去</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container center-text thin-text">
+        <p>©2015-2019&nbsp;mc双十制作组&nbsp;&nbsp;&nbsp;&nbsp;制作组所有存档均遵循MIT协议</p>
+    </div>
+</footer>
+<script src="./static/jquery.js"></script>
+<script src="./static/layui/layui.js"></script>
+<script src="./static/main.js"></script>
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+    });
+</script>
 </body>
 </html>
